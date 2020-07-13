@@ -5,7 +5,6 @@
     "cpu": ${fargate_cpu},
     "memory": ${fargate_memory},
     "networkMode": "awsvpc",
-    "command": [ "apk install -y python" ],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
