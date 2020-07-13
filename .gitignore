@@ -1,3 +1,4 @@
 credentials.env
 .terraform
 terraform.*
+.terraform*
