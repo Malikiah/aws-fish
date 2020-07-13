@@ -45,34 +45,3 @@ resource "aws_ecs_service" "main" {
 
   depends_on = [aws_alb_listener.front_end, aws_iam_role_policy_attachment.ecs_task_execution_role]
 }
-
-// resource "aws_ecs_cluster" "fishtech" {
-//   name = "fishtech-cluster"
-// }
-
-
-// resource "aws_ecs_service" "nginx" {
-//   name            = "nginx"
-//   cluster         = aws_ecs_cluster.fishtech.id
-//   task_definition = aws_ecs_task_definition.nginx.arn
-//   desired_count   = 3
-//   // iam_role        = "${aws_iam_role.foo.arn}"
-//   // depends_on      = ["aws_iam_role_policy.foo"]
-
-//   ordered_placement_strategy {
-//     type  = "binpack"
-//     field = "cpu"
-//   }
-  
-//   depends_on = [
-//       aws_ecs_cluster.fishtech,
-//       aws_ecs_task_definition.nginx
-//   ]
-// }
-
-
-// resource "aws_ecs_task_definition" "nginx" {
-//   family                = "service"
-//   container_definitions = file("task-definitions/nginx-service.json")
-
-// }
